@@ -1,0 +1,50 @@
+<div class="container register-form">
+    <div class="form">
+        <h3>User Details</h3>
+        
+        <div class="form-content">
+            <div class="row">
+                <div class="col-md-12">
+                    <div class="form-group">
+                        <input type="text" [(ngModel)]="user.firstName" class="form-control" placeholder="First Name" value=""/>
+                    </div>
+                </div>
+            </div>
+            <div class="row">
+                <div class="col-md-12">
+                    <div class="form-group">
+                        <input type="text" [(ngModel)]="user.secondName" class="form-control" placeholder="Second Name" value=""/>
+                    </div>
+                </div>    
+            </div>
+            <div class="row">
+                <div class="col-md-12">
+                    <div class="form-group">
+                        <input type="text" [(ngModel)]="user.email" class="form-control" placeholder="Email" value=""/>
+                    </div>
+                </div>    
+            </div>
+            <div class="row">
+                <div class="col-md-12 f-left">
+                    <div class="form-group">
+                        <select [(ngModel)]="user.userGroup" class="form-control">
+                            <option value="">Select</option>
+                            <option *ngFor="let group of groups">{{group.groupCode}}</option> 
+                          </select>
+                    </div>
+                </div>    
+            </div>
+            <div class="row">
+                <div class="col-md-12 f-left">
+                    <div class="form-group">
+                        <label for="active">Active
+                            <input type="checkbox" [(ngModel)]="user.active" class="form-control" data-toggle="switch" name="Active" id="active" />
+                        </label>
+                    </div>
+                </div>    
+            </div>
+            
+            <button type="button" (click)="saveUser()" class="btnSubmit">Submit</button>
+        </div>
+    </div>
+</div>

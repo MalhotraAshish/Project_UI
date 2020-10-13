@@ -1,0 +1,31 @@
+<h1>Users List</h1>
+<div class="container">
+    <table class="table">
+        <thead>
+            <tr>
+                <th>First name</th>
+                <th>Second Name</th>
+                <th>Email</th>
+                <th>Group</th>
+                <th>Active</th>
+                <th>Update</th>
+                <th>Delete</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr *ngFor="let user of users">
+                <td>{{user.firstName}}</td>
+                <td>{{user.secondName}}</td>
+                <td>{{user.email}}</td>
+                <td>{{user.userGroup}}</td>
+                <td>{{user.active}}</td>
+                <td> 
+                    <button (click)="updateUser(user.id)" class="btn btn-success">Update</button> 
+                </td>
+                <td> 
+                    <button (click)="deleteUser(user.id)" class="btn btn-warning">Delete</button> 
+                </td>
+            </tr>
+        </tbody>
+    </table>
+</div>    

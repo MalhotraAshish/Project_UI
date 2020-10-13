@@ -1,0 +1,18 @@
+<header>
+    <nav class="navbar navbar-expand-md navbar-dark bg-dark">
+        <div>
+            <a href="" class="navbar-brand">LTI Assesment</a>
+        </div>
+
+        <ul class="navbar-nav">
+            <li> <a *ngIf="authService.isUserLoggedIn()" routerLink="/welcome" class="nav-link">Home</a> </li>
+            <li> <a *ngIf="authService.isUserLoggedIn()" routerLink="/users" class="nav-link">Users</a> </li>
+            <li> <a *ngIf="authService.isUserLoggedIn()" routerLink="/group" class="nav-link">Group</a> </li>
+            <li> <a *ngIf="authService.isUserLoggedIn()" routerLink="/user/0" class="nav-link">Create user</a> </li>
+        </ul>
+        <ul class="navbar-nav navbar-collapse justify-content-end">
+                <li> <a *ngIf="!authService.isUserLoggedIn()" routerLink="/login" class="nav-link">Login</a> </li>
+                <li> <a *ngIf="authService.isUserLoggedIn()" routerLink="/logout" class="nav-link">Logout</a> </li>
+            </ul>
+    </nav>
+</header>

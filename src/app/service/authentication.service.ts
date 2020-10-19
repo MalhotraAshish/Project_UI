@@ -20,7 +20,7 @@ export class AuthenticationService {
 
   loginJWT(userName, password){
    
-    return this.httpClient.post<any>('http://localhost:8082/authenticate', {
+    return this.httpClient.post<any>('http://localhost:8765/api/user-module/authenticate', {
       userName,
       password
     }).pipe(
@@ -43,7 +43,7 @@ export class AuthenticationService {
       Authorization : basicAuth
     });
 
-    return this.httpClient.get<Users>('http://localhost:8082/authenticate', 
+    return this.httpClient.get<Users>('http://localhost:8765/api/user-module/authenticate', 
     {headers}).pipe(
       map(
         data => {

@@ -20,12 +20,12 @@ export class UserDataService {
       Authorization : jwtAuthString
     });
     console.log(basicAuthString);
-    return this.httpClient.get<Users[]>('http://localhost:8082/user/getAllUsers',
+    return this.httpClient.get<Users[]>('http://localhost:8765/api/user-module/user/getAllUsers',
     {headers : headers});
   }
 
   getUser(id){
-    return this.httpClient.get<Users>(`http://localhost:8082/user/${id}`);
+    return this.httpClient.get<Users>(`http://localhost:8765/api/user-module/user/${id}`);
   }
 
   updateUser(id, users){
@@ -33,16 +33,16 @@ export class UserDataService {
     let headers = new HttpHeaders({
       Authorization : jwtAuthString
     });
-    return this.httpClient.put(`http://localhost:8082/updateUser/${id}`, users);
+    return this.httpClient.put(`http://localhost:8765/api/user-module/updateUser/${id}`, users);
   }
 
   deleteUser(id){
     console.log("service - " + id);
-    return this.httpClient.delete(`http://localhost:8083/user/${id}`);
+    return this.httpClient.delete(`http://localhost:8765/api/user-module/user/${id}`);
   }
 
   getUserGroup(){
-    return this.httpClient.get<Group[]>('http://localhost:8082/group/getAllUserGroup');
+    return this.httpClient.get<Group[]>('http://localhost:8765/api/user-module/group/getAllUserGroup');
   }
 
   createBasicHeader(){
